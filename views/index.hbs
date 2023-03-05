@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+    background-color: rgb(214, 232, 147);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+  }
+  
+  form {
+    background-color: rgb(204 225 85);
+    padding: 30px;
+    border-radius: 10px;
+    animation: slideIn 0.5s ease-in-out;
+    opacity: 0.8;
+    
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: orange;
+  }
+
+  input[type="button"]:hover {
+    background-color: orange;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #ccc;
+  }
+  
+  :-moz-placeholder {
+    color: #ccc;
+  }
+  
+  ::-moz-placeholder {
+    color: #ccc;
+  }
+  
+  :-ms-input-placeholder {
+    color: #ccc;
+  }
+  
+    </style>
+</head>
+<body>
+
+   <div class="container">
+  <form action="/jokes" method="post">
+    <h1>TELL US A JOKE</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="joke">Joke:</label>
+    <textarea id="joke" name="joke" rows="5" required></textarea>
+    <input type="submit" onclick="alert('Joke submitted')" value="Submit">
+    <input type="button" value="Random joke" id="random">
+    <input type="button" value="Copy API link" id="api">
+  </form>
+</div>
+
+ <script>
+  
+   document.getElementById("random").addEventListener('click',()=>{
+    location.href = 'http://localhost:8000/jokesgetData'
+   })
+ </script>
+</body>
+</html>
